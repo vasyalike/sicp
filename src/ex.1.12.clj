@@ -1,18 +1,22 @@
-(defn pascal-triangle [col row]
-  (cond (= row 1) 1
-        (= col 1) 1
-        (= row col) 1
-        :else (+ (pascal-triangle (- col 1) (- row 1)) (pascal-triangle col (- row 1)))))
+(defn pascal-triangle [n-row k-col]
+  (cond (= n-row 0) 1
+        (= k-col 0) 1
+        (= n-row k-col) 1
+        :else (+ (pascal-triangle (- n-row 1) (- k-col 1)) (pascal-triangle (- n-row 1) k-col))))
 
+(println (pascal-triangle 0 0))
+(println (pascal-triangle 1 0))
 (println (pascal-triangle 1 1))
-(println (pascal-triangle 1 2))
-(println (pascal-triangle 2 2))
-(println (pascal-triangle 2 3))
-(println (pascal-triangle 3 5))
+(println (pascal-triangle 2 1))
+(println (pascal-triangle 4 2))
 (println)
-(println (pascal-triangle 2 8))
-(println (pascal-triangle 3 8))
-(println (pascal-triangle 4 8))
-(println (pascal-triangle 5 8))
-(println (pascal-triangle 6 8))
-(println (pascal-triangle 7 8))
+(println (pascal-triangle 7 0))
+(println (pascal-triangle 7 1))
+(println (pascal-triangle 7 2))
+(println (pascal-triangle 7 3))
+(println (pascal-triangle 7 4))
+(println (pascal-triangle 7 5))
+(println (pascal-triangle 7 6))
+(println (pascal-triangle 7 7))
+
+#_(println (pascal-triangle 30 15))                           ;155117520
